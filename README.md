@@ -1,4 +1,4 @@
-fantaclacio
+fantacalcio
 ===========
 
-Fantacalcio
+Fantasy Soccer app (in development)
