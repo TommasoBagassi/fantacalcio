@@ -1,0 +1,12 @@
+table td a.icon-top-margin {
+	margin-top:3px;
+}
+
+.tabella-calciatori {
+	table-layout: fixed;
+	width: 100%;
+}
+
+a.icon-top-margin {
+	margin-top:6px;
+}

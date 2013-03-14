@@ -1,0 +1,450 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+    <head>
+        
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <title>FANTACALCIO</title>
+        
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+		<!-- StyleSheets -->
+		<link rel="stylesheet" type="text/css" href="res/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="res/css/bootstrap-responsive.css" />
+		<link rel="stylesheet" type="text/css" href="res/css/custom.css" />
+
+    </head>
+    
+    <body>
+
+	    <div class="container-fluid configura-lega">
+
+		    <div class="navbar">
+			    <div class="navbar-inner">
+
+				    <a class="brand" href="#">FANTASY FOOTBALL</a>
+
+				    <ul class="nav nav-pills">
+				     	<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+								Points recap <b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="#filter?Squadra=all" class="active">All teams</a></li>
+								<li><a href="#filter?Squadra=Atalanta">Atalanta</a></li>
+								<li><a href="#filter?Squadra=Bologna">Bologna</a></li>
+								<li><a href="#filter?Squadra=Cagliari">Cagliari</a></li>
+								<li><a href="#filter?Squadra=Catania">Catania</a></li>
+								<li><a href="#filter?Squadra=Chievo">Chievo</a></li>
+								<li><a href="#filter?Squadra=Fiorentina">Fiorentina</a></li>
+								<li><a href="#filter?Squadra=Genoa">Genoa</a></li>
+								<li><a href="#filter?Squadra=Inter">Inter</a></li>
+								<li><a href="#filter?Squadra=Juventus">Juventus</a></li>
+								<li><a href="#filter?Squadra=Lazio">Lazio</a></li>
+								<li><a href="#filter?Squadra=Milan">Milan</a></li>
+								<li><a href="#filter?Squadra=Napoli">Napoli</a></li>
+								<li><a href="#filter?Squadra=Palermo">Palermo</a></li>
+								<li><a href="#filter?Squadra=Parma">Parma</a></li>
+								<li><a href="#filter?Squadra=Pescara">Pescara</a></li>
+								<li><a href="#filter?Squadra=Roma">Roma</a></li>
+								<li><a href="#filter?Squadra=Sampdoria">Sampdoria</a></li>
+								<li><a href="#filter?Squadra=Siena">Siena</a></li>
+								<li><a href="#filter?Squadra=Torino">Torino</a></li>
+								<li><a href="#filter?Squadra=Udinese">Udinese</a></li>
+							</ul>
+						</li>
+					    <li class="active dropdown">
+					    	<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					    		League <b class="caret"></b>
+					    	</a>
+					    	<ul class="dropdown-menu">
+								<li class="active"><a href="configura_lega.html">Configure league</a></li>
+								<li><a href="configura_squadre.html">Configure team</a></li>
+								<!-- <li><a href="#">Classifica</a></li> -->
+							</ul>
+					    </li>
+					    <!-- <li class="dropdown">
+					    	<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					    		Formazioni lega <b class="caret"></b>
+					    	</a>
+					    	<ul class="dropdown-menu">
+								<li><a href="#">Team</a></li>
+								<li><a href="#">Team</a></li>
+								<li><a href="#">Team</a></li>
+								<li><a href="#">Team</a></li>
+								<li><a href="#">Team</a></li>
+								<li><a href="#">Team</a></li>
+								<li><a href="#">Team</a></li>
+								<li><a href="#">Team</a></li>
+							</ul>
+					    </li> -->
+				    </ul>
+
+			    </div>
+		    </div>
+
+		    <div class="row-fluid">
+
+		    	<div class="span12">
+
+		    		<div class="well">
+			    		<h1>Configure rules for your league</h1>
+			    		<p>Lorem ipsum dolor sit amet</p>
+			    	</div>
+
+		    	</div>
+
+		    </div>
+
+			<form class="form-horizontal">
+
+		    	<div class="row-fluid">
+
+				    <div class="span3">
+
+						<legend>
+					    	Game scoring
+				    	</legend>
+
+				    	<div class="control-group">
+						    <label class="control-label" for="sogliaGoal">Goal threshold</label>
+						    <div class="controls">
+						    	<input type="text" id="sogliaGoal" placeholder="Goal threshold (default 66)">
+						    </div>
+					    </div>
+					    <div class="control-group">
+						    <label class="control-label" for="fascia">Goal interval</label>
+						    <div class="controls">
+						    	<select id="fascia">
+						    		<option>3 points</option>
+						    		<option>4 points</option>
+						    		<option>5 points</option>
+						    		<option>6 points</option>
+						    		<option>7 points</option>
+						    		<option>8 points</option>
+						    		<option>9 points</option>
+						    	</select>
+						    </div>
+					    </div>
+					    <div class="control-group">
+						    <label class="control-label" for="fattoreCampo">Home team bonus</label>
+						    <div class="controls">
+						    	<input type="text" id="fattoreCampo" placeholder="Home team bonus (default +1)">
+						    </div>
+					    </div>
+
+					    <legend>
+					    	Modifiers
+				    	</legend>
+
+			    		<div class="control-group">
+						    <label class="control-label" for="portiereImbattuto">Unbeaten Goalie</label>
+						    <div class="controls">
+						    	<input type="text" id="portiereImbattuto" placeholder="Unbeaten Goalie (default +1)">
+						    </div>
+					    </div>
+					    <div class="control-group">
+						    <label class="control-label" for="modPortiere">Mod. portiere <a class="icon-info-sign" href="#" data-original-title="Modificatore portiere" data-content="<p>Il modificatore del portiere &egrave; calcolato sulla base dei voti ottenuti in pagella senza considerare bonus e malus:<br />- Voto&lt;=3, +3 all&#39;avversario<br />- Voto 3,5, +2,5 all&#39;avversario<br />- Voto 4, +2 all&#39;avversario<br />- Voto 4,5, +1,5 all&#39;avversario<br />- Voto 5, +1 all&#39;avversario<br />- Voto 5,5, +0,5 all&#39;avversario<br />- Voto 6, +0 all&#39;avversario<br />- Voto 6,5, -0,5 all&#39;avversario<br />- Voto 7, -1 all&#39;avversario<br />- Voto 7,5, -1,5 all&#39;avversario<br />- Voto 8, -2 all&#39;avversario<br />- Voto 8,5, -2,5 all&#39;avversario<br />- Voto &gt;=9, -3 all&#39;avversario</p>" rel="popover" data-placement="right" data-trigger="hover"href="#"></a></label>
+						    <div class="controls">
+						    	<label class="radio inline">
+									<input type="radio" name="modPortiere" id="modPortiereY" value="Yes"> Si
+								</label>
+								<label class="radio inline">
+									<input type="radio" name="modPortiere" id="modPortiereN" value="No" checked> No
+								</label>
+						    </div>
+					    </div>
+
+					    <div class="control-group">
+						    <label class="control-label" for="modDifesa">Defense bonus <a class="icon-info-sign" href="#" data-original-title="Modificatore difesa" data-content="<p>Il modificatore della difesa &egrave; un bonus che si calcola solo se il portiere e almeno 4 difensori portano punteggio alla squadra. Si considerano il voto del portiere e i tre migliori voti dei difensori e si calcola la media aritmetica di questo quattro valori:<br />+6 con media &egrave;&gt;=7<br />+3 con media &egrave;&gt;=6,5 e &lt;7<br />+1 con media &egrave;&gt;=6 e &lt;6,5</p>" rel="popover" data-placement="right" data-trigger="hover"href="#"></a></label>
+						    <div class="controls">
+						    	<label class="radio inline">
+									<input type="radio" name="modDifesa" id="modDifesaY" value="Yes" checked> Yes
+								</label>
+								<label class="radio inline">
+									<input type="radio" name="modDifesa" id="modDifesaN" value="No"> No
+								</label>
+						    </div>
+					    </div>
+					    <div class="control-group">
+						    <label class="control-label" for="modCentrocampo">Midfield bonus <a class="icon-info-sign" href="#" data-original-title="Modificatore centrocampo" data-content="<p>Il modificatore del centrocampo &egrave; dato dal confronto tra il totale punteggi dei centrocampisti delle due squadre (esclusi bonus e malus):<br />- differenza &lt;2, 0 a entrambe le squadre<br />- differenza tra 2 e 3,99, +1 alla squadra migliore, -1 all&#39;altra<br />- differenza tra 4 e 5,99, +2 alla squadra migliore, -2 all&#39;altra<br />- differenza tra, 6 e 7,99, +3 alla squadra migliore, -3 all&#39;altra<br />- differenza &gt;=8, +4 alla squadra migliore, -4 all&#39;altra<br />Nel caso di disparit&agrave; nel numero di centrocampisti schierat, verranno aggiunti alla squadra con meno centrocampisti tanti voti pari a 5 quanti sono i centrocampisti mancanti.</p>" rel="popover" data-placement="right" data-trigger="hover"href="#"></a></label>
+						    <div class="controls">
+						    	<label class="radio inline">
+									<input type="radio" name="modCentrocampo" id="modCentrocampoY" value="Yes"> Yes
+								</label>
+								<label class="radio inline">
+									<input type="radio" name="modCentrocampo" id="modCentrocampoN" value="No" checked> No
+								</label>
+						    </div>
+					    </div>
+					    <div class="control-group">
+						    <label class="control-label" for="modAttacco">Attacking bonus <a class="icon-info-sign" href="#" data-original-title="Modificatore attacco" data-content="<p>Il modificatore incide solo sugli attaccanti che ricevono voto sufficiente, che non segnano e non sbagliano rigori:<br />- Voto 6 il mod &egrave; 0<br />- Voto 6,5 il mod &egrave; +0,5<br />- Voto 7 il mod &egrave; pari a +1<br />- Voto 7,5 il mod &egrave; +1,5<br />- Voto 8 o pi&ugrave; il mod &egrave; +2<br />Il modificatore dell&#39;attacco della squadra equivale alla somma algebrica dei modificatori dell&#39;attacco dei singoli giocatori.</p>" rel="popover" data-placement="right" data-trigger="hover"href="#"></a></label>
+						    <div class="controls">
+						    	<label class="radio inline">
+									<input type="radio" name="modAttacco" id="modAttaccoY" value="Yes"> Yes
+								</label>
+								<label class="radio inline">
+									<input type="radio" name="modAttacco" id="modAttaccoN" value="No" checked> No
+								</label>
+						    </div>
+					    </div>
+
+				    </div>
+
+				    <div class="span3">
+
+						<legend>
+					    	Formation
+				    	</legend>
+
+				    	<div class="control-group">
+						    <label class="control-label" for="formazioni">Available formations</label>
+						    <div class="controls">
+						    	<select id="formazioni" multiple="multiple" size="11">
+									<option>2-3-5</option>
+									<option>3-3-4</option>
+									<option>3-4-3</option>
+									<option>3-5-2</option>
+									<option>3-6-1</option>
+									<option>4-2-4</option>
+									<option>4-3-3</option>
+									<option>4-4-2</option>
+									<option>4-5-1</option>
+									<option>5-3-2</option>
+									<option>5-4-1</option>
+								</select>
+						    </div>
+					    </div>
+					    <div class="control-group">
+					    	<span class="help-block">Max number of player per role in team</span>
+					    </div>
+					    <div class="control-group">
+						    <label class="control-label" for="portieriSquadra">Goalkeepers</label>
+						    <div class="controls">
+						    	<select id="portieriSquadra">
+						    		<option>2</option>
+						    		<option>3</option>
+						    		<option>4</option>
+						    		<option>5</option>
+						    	</select>
+						    </div>
+					    </div>
+					    <div class="control-group">
+						    <label class="control-label" for="difensoriSquadra">Defenders</label>
+						    <div class="controls">
+						    	<select id="difensoriSquadra">
+						    		<option>6</option>
+						    		<option>7</option>
+						    		<option>8</option>
+						    		<option>9</option>
+						    		<option>10</option>
+						    	</select>
+						    </div>
+					    </div>
+					    <div class="control-group">
+						    <label class="control-label" for="centrocampistiSquadra">Midfielders</label>
+						    <div class="controls">
+						    	<select id="centrocampistiSquadra">
+						    		<option>6</option>
+						    		<option>7</option>
+						    		<option>8</option>
+						    		<option>9</option>
+						    		<option>10</option>
+						    	</select>
+						    </div>
+					    </div>
+					    <div class="control-group">
+						    <label class="control-label" for="attaccantiSquadra">Forward</label>
+						    <div class="controls">
+						    	<select id="attaccantiSquadra">
+						    		<option>4</option>
+						    		<option>5</option>
+						    		<option>6</option>
+						    		<option>7</option>
+						    		<option>8</option>
+						    	</select>
+						    </div>
+					    </div>
+
+					</div>
+
+					<div class="span3">
+
+						<legend>
+					    	Bench
+				    	</legend>
+
+						<div class="control-group">
+					    	<span class="help-block">Max number of benched players</span>
+					    </div>
+					    <div class="control-group">
+						    <label class="control-label" for="portieriPanca">Goalkeepers</label>
+						    <div class="controls">
+						    	<select id="portieriPanca">
+						    		<option>None</option>
+						    		<option>1</option>
+						    		<option>2</option>
+						    	</select>
+						    </div>
+					    </div>
+					    <div class="control-group">
+						    <label class="control-label" for="difensoriPanca">Defenders</label>
+						    <div class="controls">
+						    	<select id="difensoriPanca">
+						    		<option>None</option>
+						    		<option>1</option>
+						    		<option>2</option>
+						    		<option>3</option>
+						    		<option>4</option>
+						    	</select>
+						    </div>
+					    </div>
+					    <div class="control-group">
+						    <label class="control-label" for="centrocampistiPanca">Midfielders</label>
+						    <div class="controls">
+						    	<select id="centrocampistiPanca">
+						    		<option>None</option>
+						    		<option>1</option>
+						    		<option>2</option>
+						    		<option>3</option>
+						    		<option>4</option>
+						    	</select>
+						    </div>
+					    </div>
+					    <div class="control-group">
+						    <label class="control-label" for="attaccantiPanca">Forward</label>
+						    <div class="controls">
+						    	<select id="attaccantiPanca">
+						    		<option>None</option>
+						    		<option>1</option>
+						    		<option>2</option>
+						    		<option>3</option>
+						    	</select>
+						    </div>
+					    </div>
+					    <div class="control-group">
+						    <label class="control-label" for="cambi">Max substitutions per game</label>
+						    <div class="controls">
+						    	<select id="cambi">
+						    		<option>None</option>
+						    		<option>1</option>
+						    		<option>2</option>
+						    		<option>3</option>
+						    		<option>4</option>
+						    		<option>5</option>
+						    		<option>6</option>
+						    		<option>7</option>
+						    		<option>8</option>
+						    		<option>9</option>
+						    		<option>10</option>
+						    		<option>11</option>
+						    		<option>Unlimited</option>
+						    	</select>
+						    </div>
+					    </div>
+
+				    </div>
+
+					<div class="span3">
+
+				    	<legend>
+					    	Player score
+				    	</legend>
+
+				    	<div class="control-group">
+						    <label class="control-label" for="goalSegnato">Goal</label>
+						    <div class="controls">
+						    	<input type="text" id="goalSegnato" placeholder="Goal (default +3)">
+						    </div>
+					    </div>
+					    <div class="control-group">
+						    <label class="control-label" for="goalVittoria">Victory goal</label>
+						    <div class="controls">
+						    	<input type="text" id="goalVittoria" placeholder="Victory goal (default +1)">
+						    </div>
+					    </div>
+					    <div class="control-group">
+						    <label class="control-label" for="goalPareggio">Tie goal</label>
+						    <div class="controls">
+						    	<input type="text" id="goalPareggio" placeholder="Tie goal (default 0)">
+						    </div>
+					    </div>
+					    <div class="control-group">
+						    <label class="control-label" for="autogoal">Owngoal</label>
+						    <div class="controls">
+						    	<input type="text" id="autogoal" placeholder="Owngoal (default -2)">
+						    </div>
+					    </div>
+					    <div class="control-group">
+						    <label class="control-label" for="goalSubito">Goal against</label>
+						    <div class="controls">
+						    	<input type="text" id="goalSubito" placeholder="Goal against (default -1)">
+						    </div>
+					    </div>
+					    <div class="control-group">
+						    <label class="control-label" for="rigoreSbagliato">Missed penalty</label>
+						    <div class="controls">
+						    	<input type="text" id="rigoreSbagliato" placeholder="Missed penalty (default -3)">
+						    </div>
+					    </div>
+					    <div class="control-group">
+						    <label class="control-label" for="rigoreParato">Saved penalty</label>
+						    <div class="controls">
+						    	<input type="text" id="rigoreParato" placeholder="Saved penalty (default +3)">
+						    </div>
+					    </div>
+					    <div class="control-group">
+						    <label class="control-label" for="assist">Assist</label>
+						    <div class="controls">
+						    	<input type="text" id="assist" placeholder="Assist (default +1)">
+						    </div>
+					    </div>
+					    <div class="control-group">
+						    <label class="control-label" for="ammonizione">Yellow Card</label>
+						    <div class="controls">
+						    	<input type="text" id="ammonizione" placeholder="Yellow Card (default -0,5)">
+						    </div>
+					    </div>
+					    <div class="control-group">
+						    <label class="control-label" for="espulsione">Red Card</label>
+						    <div class="controls">
+						    	<input type="text" id="espulsione" placeholder="Red Card (default -1)">
+						    </div>
+					    </div>
+
+				    </div>
+
+		    	</div>
+
+		    	<div class="row-fluid">
+
+		    		<div class="span12">
+					    <div class="control-group">
+					    	<button type="submit" class="btn pull-right">Save settings <span class="icon-ok"></span></button>
+					    </div>
+		    		</div>
+
+		    	</div>
+
+			</form>
+
+	    </div>
+	        
+		<!-- Javascript -->
+		<script type="text/javascript" src="res/js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="res/js/jquery.tools.min.js"></script>
+		<script type="text/javascript" src="res/js/jquerytools.expose.js"></script>
+		<script type="text/javascript" src="res/js/moment.min.js"></script>
+		<script type="text/javascript" src="res/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="res/js/underscore-min.js"></script>
+
+		<!--[if lt IE 8]>
+		<script type="text/javascript" src="res/js/DD_belatedPNG.js"></script>
+		<script type="text/javascript" src="res/js/jquery.fixPNGs.js"></script>
+		<![endif]-->
+        <script type="text/javascript" src="res/js/supersleight.plugin.js"></script>
+        
+		<script type="text/javascript" src="res/js/custom.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+    <head>
+        
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <title>FANTACALCIO</title>
+        
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+		<!-- StyleSheets -->
+		<link rel="stylesheet" type="text/css" href="res/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="res/css/bootstrap-responsive.css" />
+		<link rel="stylesheet" type="text/css" href="res/css/select2.css" />
+		<link rel="stylesheet" type="text/css" href="res/css/custom.css" />
+		<link rel="stylesheet" type="text/css" href="res/css/riassunto.css" />
+
+		<!--[if IE]>
+		<style>
+		    .tabella-calciatori {
+		        table-layout: fixed;
+		        width: 100px;
+		    }
+		</style>
+		<![endif]-->
+
+    </head>
+    
+    <body>
+
+	    <div class="container-fluid">
+
+		    <div class="navbar">
+			    <div class="navbar-inner">
+
+				    <a class="brand" href="#">FANTASY FOOTBALL</a>
+
+				    <ul class="nav nav-pills">
+				     	<li class="active dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+								Points recap <b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="#filter?Squadra=all" class="active">All teams</a></li>
+								<li><a href="#filter?Squadra=Atalanta">Atalanta</a></li>
+								<li><a href="#filter?Squadra=Bologna">Bologna</a></li>
+								<li><a href="#filter?Squadra=Cagliari">Cagliari</a></li>
+								<li><a href="#filter?Squadra=Catania">Catania</a></li>
+								<li><a href="#filter?Squadra=Chievo">Chievo</a></li>
+								<li><a href="#filter?Squadra=Fiorentina">Fiorentina</a></li>
+								<li><a href="#filter?Squadra=Genoa">Genoa</a></li>
+								<li><a href="#filter?Squadra=Inter">Inter</a></li>
+								<li><a href="#filter?Squadra=Juventus">Juventus</a></li>
+								<li><a href="#filter?Squadra=Lazio">Lazio</a></li>
+								<li><a href="#filter?Squadra=Milan">Milan</a></li>
+								<li><a href="#filter?Squadra=Napoli">Napoli</a></li>
+								<li><a href="#filter?Squadra=Palermo">Palermo</a></li>
+								<li><a href="#filter?Squadra=Parma">Parma</a></li>
+								<li><a href="#filter?Squadra=Pescara">Pescara</a></li>
+								<li><a href="#filter?Squadra=Roma">Roma</a></li>
+								<li><a href="#filter?Squadra=Sampdoria">Sampdoria</a></li>
+								<li><a href="#filter?Squadra=Siena">Siena</a></li>
+								<li><a href="#filter?Squadra=Torino">Torino</a></li>
+								<li><a href="#filter?Squadra=Udinese">Udinese</a></li>
+							</ul>
+						</li>
+					    <li class="dropdown">
+					    	<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					    		League <b class="caret"></b>
+					    	</a>
+					    	<ul class="dropdown-menu">
+								<li><a href="configura_lega.html">Configure league</a></li>
+								<li><a href="configura_squadre.html">Configure team</a></li>
+								<!-- <li><a href="#">Classifica</a></li> -->
+							</ul>
+					    </li>
+					    <!-- <li class="dropdown">
+					    	<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					    		Formazioni lega <b class="caret"></b>
+					    	</a>
+					    	<ul class="dropdown-menu">
+								<li><a href="#">Team</a></li>
+								<li><a href="#">Team</a></li>
+								<li><a href="#">Team</a></li>
+								<li><a href="#">Team</a></li>
+								<li><a href="#">Team</a></li>
+								<li><a href="#">Team</a></li>
+								<li><a href="#">Team</a></li>
+								<li><a href="#">Team</a></li>
+							</ul>
+					    </li> -->
+				    </ul>
+
+			    </div>
+		    </div>
+
+		    <div class="row-fluid">
+			    <div class="span12">
+			    	<div class="well">
+			    		<h1>Players and teams recap</h1>
+			    		<p>Player performance table</p>
+			    	</div>
+			    </div>
+			</div>
+
+			<div class="row-fluid">
+				<div class="span12" id="filtri-placeholder">
+				</div>
+			</div>
+
+			<div class="row-fluid" id="listaVoti">
+				<div class="span12" id="tabella-giocatori">
+			  	</div>
+		    </div>
+
+	    </div>
+	        
+		
+		<!-- Javascript -->
+		<script type="text/javascript" src="res/js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="res/js/jquery.tools.min.js"></script>
+		<script type="text/javascript" src="res/js/jquerytools.expose.js"></script>
+		<script type="text/javascript" src="res/js/moment.min.js"></script>
+		<script type="text/javascript" src="res/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="res/js/underscore-min.js"></script>
+		<script type="text/javascript" src="res/js/backbone-min.js"></script>
+		<script type="text/javascript" src="res/js/backbone.queryparams.js"></script>
+		<script type="text/javascript" src="res/js/select2.min.js"></script>
+
+		<!--[if lt IE 8]>
+		<script type="text/javascript" src="res/js/DD_belatedPNG.js"></script>
+		<script type="text/javascript" src="res/js/jquery.fixPNGs.js"></script>
+		<![endif]-->
+        <script type="text/javascript" src="res/js/supersleight.plugin.js"></script>
+        
+		<script type="text/javascript" src="inc/default_configuration.js"></script>
+		<script type="text/javascript" src="inc/lista_calciatori.js"></script>
+
+		<script type="text/javascript" src="res/js/custom.js"></script>
+		<script type="text/javascript" src="res/js/riassunto_voti.js"></script>
+
+		<!-- Templates -->
+		<script type="text/template" id="filtri-template">
+			<div class="row-fluid top-options">
+				<div class="row-fluid">
+					<div class="span12">
+						<button id="mostra-opzioni" class="btn" name="mostra-opzioni" data-toggle="collapse" data-target="#opzioni">Options <i class="icon-chevron-down"></i></button>
+					</div>
+				</div>
+				<div class="row-fluid collapse" id="opzioni">
+					<div class="span6">
+					</div>
+					<div class="span6">
+						<textarea class="input-block-level" id="display-disponibili" name="display-disponibili" value="" rows="10" style="resize: vertical;"></textarea>
+						<button id="import-disponibili" class="btn btn-success" name="import-disponibili">Import market availability from field</button>
+						<button id="check-disponibili" class="btn btn-warning" name="check-disponibili">Check saved market availability</button>
+						<button id="force-disponibili" class="btn btn-danger" name="force-disponibili">Force reset to default</button>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span12">
+						<button id="mostra-filtri" class="btn" name="mostra-filtri" data-toggle="collapse" data-target="#filtri">Filters <i class="icon-chevron-down"></i></button>
+					</div>
+				</div>
+				<form class="form-horizontal form-search collapse" id="filtri">
+					<div class="row-fluid">
+						<div class="span3">
+							<div class="control-group">
+								<label class="control-label">Player name</label>
+								<div class="controls">
+									<input id="filtri-giocatore" class="" rel="Giocatore" data-default-value="" type="text" name="giocatore" placeholder="Find player...">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label">Role</label>
+								<div class="controls">
+									<select id="filtri-ruolo" class="elenco" rel="Ruolo" data-default-value="all" placeholder="Find role..." multiple></select>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label">Team</label>
+								<div class="controls">
+									<select id="filtri-squadra" class="elenco" rel="Squadra" data-default-value="all" placeholder="Find team..." multiple></select>
+								</div>
+							</div>
+						</div>
+						<div class="span2">
+							<div class="control-group">
+								<label class="control-label">Played games</label>
+								<div class="controls">
+									<input id="filtri-partite" class="input-mini" rel="partite" data-default-value="0" type="number" name="partite" placeholder="...">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label">Average points</label>
+								<div class="controls">
+									<input id="filtri-voto" class="input-mini" rel="voto" data-default-value="0" type="number" name="voto" placeholder="...">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label">Average mediated points</label>
+								<div class="controls">
+									<input id="filtri-fanta" class="input-mini" rel="fanta" data-default-value="0" type="number" name="fanta" placeholder="...">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label">Goals</label>
+								<div class="controls">
+									<input id="filtri-goal" class="input-mini" rel="goal" data-default-value="0" type="number" name="goal" placeholder="...">
+								</div>
+							</div>
+							<div class="control-group">
+								<div class="controls">
+									<button id="filtri-submit" class="btn btn-success" type="submit" name="filtri-submit">Filter</button>
+								</div>
+							</div>
+						</div>
+						<div class="span4">
+							<form class="form-horizontal">
+								<div class="control-group">
+									<label class="control-label">Filter name</label>
+									<div class="controls">
+										<input id="nome-filtro-save" class="" type="text" name="nome-filtro-save" placeholder="Insert name of filter...">
+										<div id="alert-placeholder" style="margin:10px 0;"></div>
+										<a href="#" id="filtri-save" class="btn" name="filtri-save">Saave current filter</a>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="span3">
+							<div id="filtri-salvati">
+								<h4>Saved filters</h4>
+								<div class="btn-group filtri-btns"></div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</script>
+
+		<script type="text/template" id="filtro-salvato">
+			<a class="btn" href="<%= url %>"><%= filtro %></a>
+		</script>
+
+		<script type="text/template" id="nome-filtro-alert">
+			<div class="alert alert-error">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<p><%= message %></p>
+			</div>
+		</script>
+
+		<script type="text/template" id="tabella-ruolo">
+			<table id="tabella-<%= ruolo %>" class="table table-hover table-condensed table-bordered tabella-calciatori">
+				<caption>
+					LEGEND: Av (Availability on market), ID (ID Player), Played (Played Games), Average (Average Points), TP (Trend Points), AM (Average Mediated Points), TMP (Trend Mediated Points), YC (Yellow Cards), RC (Red Cards), OG (Owngoals), GA (Goals Against), Ass (Assist), Pen (Penalties Transformed), Pen M (Penalties Missed), Pen A (Penalties Against), Pen S (Penalties Saved)
+				</caption>
+				<thead>
+					<tr>
+						<th colspan="19"><span><%= ruolo %></span></th>
+					</tr>
+					<tr>
+						<th class="list-order id-cont disponibile" rel="disponibile" title="disponibile"><i class="icon-chevron-right"></i> Av</th>
+						<th class="list-order id-cont ID" rel="ID" title="ID"><i class="icon-chevron-right"></i> ID</th>
+						<th class="list-order Giocatore" rel="Giocatore" title="Giocatore"><i class="icon-chevron-right"></i> Player</th>
+						<th class="list-order Squadra" rel="Squadra" title="Squadra"><i class="icon-chevron-right"></i> Team</th>
+						<th class="list-order num-cont partite" rel="partite" title="Partite giocate"><i class="icon-chevron-right"></i> Played</th>
+						<th class="list-order num-cont voto" rel="voto" title="Media voto"><i class="icon-chevron-right"></i> Average</th>
+						<th class="list-order xs-cont votoTrend" rel="votoTrend" title="Trend Voti"><i class="icon-chevron-right"></i> TP</th>
+						<th class="list-order num-cont fanta" rel="fanta" title="Fantamedia"><i class="icon-chevron-right"></i> AM</th>
+						<th class="list-order xs-cont fantaTrend" rel="fantaTrend" title="Trend Fantavoti"><i class="icon-chevron-right"></i> TMP</th>
+						<th class="list-order num-cont amm" rel="amm" title="Ammonizioni"><i class="icon-chevron-right"></i> YC</th>
+						<th class="list-order num-cont esp" rel="esp" title="Espulsioni"><i class="icon-chevron-right"></i> RC</th>
+						<th class="list-order num-cont goal" rel="goal" title="Goal"><i class="icon-chevron-right"></i> Gol</th>
+						<th class="list-order num-cont owngoal" rel="owngoal" title="Autogoal"><i class="icon-chevron-right"></i> OG</th>
+						<th class="list-order num-cont takengoal" rel="takengoal" title="Goal subito"><i class="icon-chevron-right"></i> GA</th>
+						<th class="list-order num-cont assist" rel="assist" title="Assist"><i class="icon-chevron-right"></i> Ass</th>
+						<th class="list-order num-cont rigtrasf" rel="rigtrasf" title="Rigore trasformato"><i class="icon-chevron-right"></i> Pen</th>
+						<th class="list-order num-cont rigsba" rel="rigsba" title="Rigore sbagliato"><i class="icon-chevron-right"></i> Pen M</th>
+						<th class="list-order num-cont rigsub" rel="rigsub" title="Rigore subito"><i class="icon-chevron-right"></i> Pen A</th>
+						<th class="list-order num-cont rigpar" rel="rigpar" title="Rigore parato"><i class="icon-chevron-right"></i> Pen S</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</script>
+
+		<script type="text/template" id="riga-giocatore">
+			<tr class="riga-calciatore <% if (disponibile == false) { %> error <% } %>">
+                <td class="disponibile" title="disponibilit&agrave;"><input type="checkbox" checked="<%= disponibile %>" /></td>
+                <td class="id clickable" title="ID"><%= id %></td>
+                <td class="name clickable" title="<%= name %>"><%= name %></td>
+                <td class="team clickable" title=""Squadra><%= team %></td>
+                <td class="partite clickable" title="Partite giocate"><%= partite %></td>
+                <td class="voto clickable" title="Media voto"><%= voto %></td>
+                <td class="votoTrend clickable" title="Trend Voti"><%= votoTrend %></td>
+                <td class="fanta clickable" title="Fantamedia"><%= fanta %></td>
+                <td class="fantaTrend clickable" title="Trend Fantavoti"><%= fantaTrend %></td>
+                <td class="amm clickable" title="Ammonizioni"><%= amm %></td>
+                <td class="esp clickable" title="Espulsioni"><%= esp %></td>
+                <td class="goal clickable" title="Goal"><%= goal %></td>
+                <td class="owngoal clickable" title="Autogoal"><%= owngoal %></td>
+                <td class="takengoal clickable" title="Goal subito"><%= takengoal %></td>
+                <td class="assist clickable" title="Assist"><%= assist %></td>
+                <td class="rigtrasf clickable" title="Rigore trasformato"><%= rigtrasf %></td>
+                <td class="rigsba clickable" title="Rigore sbagliato"><%= rigsba %></td>
+                <td class="rigsub clickable" title="Rigore subito"><%= rigsub %></td>
+                <td class="rigpar clickable" title="Rigore parato"><%= rigpar %></td>
+            </tr>
+		</script>
+
+		<script type="text/template" id="riga-giornata">
+			<tr class="riga-giornata">
+                <td class="no-border"></td>
+                <td class="no-border"></td>
+                <td class="no-border"></td>
+                <td class="no-border" style="text-align:right;">Game:</td>
+                <td class="first-border giornata"><%= giornata %></td>
+                <td class="voto" title="Voto"><%= voto %></td>
+                <td></td>
+                <td class="fanta" title="Fantavoto"><%= fanta %></td>
+                <td></td>
+                <td class="amm" title="Ammonizione"><%= amm %></td>
+                <td class="esp" title="Espulsione"><%= esp %></td>
+                <td class="goal" title="Goal"><%= goal %></td>
+                <td class="owngoal" title="Autogoal"><%= owngoal %></td>
+                <td class="takengoal" title="Goal subito"><%= takengoal %></td>
+                <td class="assist" title="Assist"><%= assist %></td>
+                <td class="rigtrasf" title="Rigore trasformato"><%= rigtrasf %></td>
+                <td class="rigsba" title="Rigore sbagliato"><%= rigsba %></td>
+                <td class="rigsub" title="Rigore subito"><%= rigsub %></td>
+                <td class="rigpar" title="Rigore parato"><%= rigpar %></td>
+            </tr>
+		</script>
+
+    </body>
+</html>

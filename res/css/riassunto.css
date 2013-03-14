@@ -1,0 +1,91 @@
+.top-options .row-fluid {
+    margin: 10px 0;
+}
+
+.tabella-calciatori {
+    table-layout: auto;
+    width: 100%;
+}
+
+.tabella-calciatori caption {
+    text-align:left;
+    padding: 10px 0;
+}
+
+.tabella-calciatori th span {
+	font-size: 26px;
+	line-height: 26px;
+	font-weight: bold;
+}
+
+.tabella-calciatori .num-cont {
+    width: 75px;
+}
+
+.tabella-calciatori .id-cont {
+    width: 50px;
+}
+
+.tabella-calciatori .xs-cont {
+    width: 30px;
+    text-align: center;
+}
+
+.tabella-calciatori th.list-order {
+	cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tabella-calciatori thead tr:nth-child(odd) {
+	background-color: #333;
+	color: white;
+}
+
+.tabella-calciatori thead tr:nth-child(odd) th {
+	border-left: none;
+}
+
+.tabella-calciatori td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tabella-calciatori tbody tr.riga-giornata td {
+    color: white;
+    background-color: #666;
+}
+
+.tabella-calciatori tbody tr.riga-giornata td.no-border {
+    border-left:none;
+    border-right:none;
+}
+
+.tabella-calciatori tbody tr.riga-giornata td.first-border {
+    border-left:none;
+}
+
+.trend {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-position: left top;
+    background-repeat: no-repeat;
+    line-height:15px;
+    margin-top:1px;
+    vertical-align: text-top;
+}
+
+.trend-up {
+    background-image: url('../img/trend_up.png');
+}
+
+.trend-dn {
+    background-image: url('../img/trend_dn.png');
+}
+
+.trend-double {
+    background-position: right top;
+}
